@@ -37,13 +37,14 @@ function ImgUser(props) {
 function Home() {
   //const UserGit = "guilhermeG23";
 
+
   //Trabalha com um array de valores, o primeiro é o valor o segundo 
   //e a funcao que o requisitada
   //Fica alternando o estado da pagina
   const [username, setUsername] = useState('');
   
   //Funcao de gacho
-  const roteamento =  useRouter();
+  const roteamento = useRouter();
 
   return (
     <>
@@ -51,6 +52,8 @@ function Home() {
       <form onSubmit={function(informacoesEvento){
         informacoesEvento.preventDefault();
         //Vai enviar voce para a pagina do chat -> So falta os valores irem juntos
+        document.cookie="";
+        document.cookie = username; 
         roteamento.push("/chat");
       }}>
         <input value={username} onChange={function(event) {
