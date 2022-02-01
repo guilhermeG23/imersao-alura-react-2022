@@ -52,9 +52,9 @@ function Home() {
       <form onSubmit={function(informacoesEvento){
         informacoesEvento.preventDefault();
         //Vai enviar voce para a pagina do chat -> So falta os valores irem juntos
-        document.cookie="";
-        document.cookie = username; 
-        roteamento.push("/chat");
+        //document.cookie="";
+        //document.cookie = username; 
+        roteamento.push(`/chat?username=${username}`);
       }}>
         <input value={username} onChange={function(event) {
             console.log(event.target.value);
